@@ -1,8 +1,10 @@
-from openai import OpenAI
+import os
+from openai import AzureOpenAI
 
-client = OpenAI(
-    api_key="sk-T6SlqfUnyFytejvA3c1584F87d6343878232185e26243b1d",
-    base_url="https://api.apiyi.com/v1",
+client = AzureOpenAI(
+  azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"), 
+  api_key=os.getenv("AZURE_OPENAI_API_KEY"),  
+  api_version="2024-02-01"
 )
 
 query = input("输入指令: ")
@@ -85,7 +87,7 @@ tools = [
  ]
 
 reponse = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model=os.getenv("AZURE_DEPLOYMENT"), 
     messages=messages,
     tools=tools,
     tool_choice="auto",
