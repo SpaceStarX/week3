@@ -50,8 +50,8 @@ for query in querys:
                             "description": "服务要修改的键的值",
                         },
                     },
-                    "required": ["service_name", "key", "value"]
-                }
+                },
+                "required": ["service_name", "key", "value"],
             }
         },
         {
@@ -67,8 +67,8 @@ for query in querys:
                             "description": "修改的服务名称",
                         },
                     },
-                    "required": ["service_name"]
-                }
+                },
+                "required": ["service_name"],
             }
         },
         {
@@ -88,8 +88,8 @@ for query in querys:
                             "description": "部署的资源镜像",
                         },
                     },
-                    "required": ["resource_type", "image"]
-                }
+                },
+                "required": ["resource_type", "image"],
             }
         }
     ]
